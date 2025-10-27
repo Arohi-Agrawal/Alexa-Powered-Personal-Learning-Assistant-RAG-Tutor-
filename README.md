@@ -128,8 +128,8 @@ yes
 ##  Author
 
 **Arohi Agrawal**  
-B.Tech (Computer Science) — NLP Mini Project  
-Mentor: *Dr. Raj Gaurav Mishra*  
+B.Tech (Computer Science) — Mini Project  
 Year: 2025  
 
 ---
+
