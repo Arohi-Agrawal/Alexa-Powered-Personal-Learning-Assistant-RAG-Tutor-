@@ -1,0 +1,52 @@
+# TOPIC: 04 Unsupervised Learning
+
+***
+
+# Section 1: Definition and Core Concepts
+
+## 1.1 Unsupervised Learning Definition
+**Unsupervised Learning** is a type of machine learning where the model learns from an **unlabeled dataset**. Unlike supervised learning, the training data consists only of input features (X) with **no corresponding output labels or guidance**. The model’s goal is to infer natural patterns, hidden structures, or clusters within the data on its own.
+
+## 1.2 Purpose and Key Difference
+The purpose of unsupervised learning is exploratory data analysis, not prediction. It is used to discover hidden relationships and group similar data points. The key difference from supervised learning is the **lack of a target variable** (Y) to guide the model.
+
+***
+
+# Section 2: Clustering
+
+## 2.1 Clustering Definition
+**Clustering** is a task of grouping data points such that data points within the same group (cluster) are more similar to each other than to those in other groups.
+
+## 2.2 K-Means Clustering
+**K-Means** is the most widely used clustering algorithm.
+- **Goal:** To partition the dataset into a predefined number of **K** distinct clusters.
+- **Process:** The algorithm iteratively tries to find the center (centroid) of each cluster by minimizing the distance between the data points and the centroid of their assigned cluster.
+- **Usage:** Market segmentation (grouping customers with similar buying habits) or document categorization.
+
+***
+
+# Section 3: Dimensionality Reduction
+
+## 3.1 Dimensionality Reduction Definition
+**Dimensionality Reduction** is the process of reducing the number of input features (variables) in a dataset while retaining most of the essential information. This simplifies the model, reduces noise, and makes visualization easier.
+
+## 3.2 Principal Component Analysis (PCA)
+**Principal Component Analysis (PCA)** is a popular technique for linear dimensionality reduction.
+- **Goal:** To transform the original features into a new, smaller set of features called **Principal Components**. These components are uncorrelated and capture the maximum possible variance (information) from the original data.
+- **Process:** It finds the directions (axes) in the data that account for the most variance.
+- **Usage:** Preprocessing for complex models or reducing the size of high-dimensional datasets like images.
+
+***
+
+# Section 4: Association Rule Mining
+
+## 4.1 Definition
+**Association Rule Mining** is a technique used to discover strong relationships between variables in large datasets. It identifies frequently occurring itemsets and generates rules that predict the likelihood of one item (or event) occurring based on the presence of other items.
+
+## 4.2 Application (Market Basket Analysis)
+The most common application is **Market Basket Analysis**, which analyzes what items customers tend to buy together.
+- **Example Rule:** {Bread, Milk} $\rightarrow$ {Eggs} (If a customer buys bread and milk, they are likely to buy eggs).
+- **Key Metrics:**
+    - **Support:** How frequently the itemset appears in the dataset.
+    - **Confidence:** How often the rule is found to be true (e.g., how often customers who bought the left side also bought the right side).
+---

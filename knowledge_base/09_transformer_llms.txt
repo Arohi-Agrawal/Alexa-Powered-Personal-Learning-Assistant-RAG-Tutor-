@@ -1,0 +1,42 @@
+# TOPIC: 09 Transformer Models
+
+***
+
+# Section 1: The Transformer Architecture
+
+## 1.1 Transformer Definition
+The **Transformer** is a revolutionary deep learning architecture introduced in the 2017 paper "Attention Is All You Need." It completely abandoned the sequential processing used by Recurrent Neural Networks (RNNs) in favor of the **Attention Mechanism**.
+- **Advantage:** Transformers process all parts of an input sequence **simultaneously (in parallel)**, drastically speeding up training and allowing the model to handle much longer contexts than RNNs.
+
+## 1.2 Encoder-Decoder Structure
+The original Transformer architecture consists of two main parts linked together:
+- **The Encoder:** Processes the input sequence (e.g., a sentence in English). It creates a rich, numerical representation (understanding) of the input, focusing on context.
+- **The Decoder:** Generates the output sequence (e.g., the same sentence translated into German), using the information provided by the Encoder. The Decoder is used for sequence-to-sequence tasks like translation.
+
+***
+
+# Section 2: Self-Attention Mechanism
+
+## 2.1 Self-Attention Function
+**Self-Attention** is the core innovation of the Transformer. It allows a word in the input sequence to measure its relevance to every other word in that *same* sequence. This is how the model determines the true **context** of each word.
+- **Example:** In the sentence, "The animal didn't cross the road because **it** was too tired," the Self-Attention mechanism allows the model to correctly link the pronoun "**it**" back to "**animal**," regardless of the distance between them.
+- **Process:** It calculates scores between words to create highly effective **contextualized word embeddings**.
+
+## 2.2 Multi-Head Attention
+Instead of performing the attention process once, **Multi-Head Attention** repeats the Self-Attention mechanism multiple times in parallel. Each "head" learns a different type of relationship (e.g., one head focuses on syntax, another on semantics), combining these insights for a more robust understanding.
+
+***
+
+# Section 3: Large Language Models (LLMs) Overview
+
+Modern LLMs are large, pre-trained Transformer networks built specifically for natural language tasks. They are often defined by their reliance on either the **Encoder** or the **Decoder** block.
+
+## 3.1 BERT (Bidirectional Encoder Representations from Transformers)
+- **Architecture:** Primarily uses the **Encoder** block of the Transformer.
+- **Goal:** Focuses on **understanding** and **analyzing** text (e.g., classification, sentiment analysis, named entity recognition). It is trained to predict masked words in a sentence, viewing the sentence in both forward and backward directions (bidirectional context).
+
+## 3.2 GPT (Generative Pre-trained Transformer)
+- **Architecture:** Primarily uses the **Decoder** block of the Transformer.
+- **Goal:** Focuses on **generating** new, coherent text. Since it only uses the Decoder, it can only attend to words that came *before* the current word in the sequence, making it ideal for creating text one word at a time. This architecture powers tools like ChatGPT.
+
+---

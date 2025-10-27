@@ -1,0 +1,58 @@
+# TOPIC: 10 Generative AI and Retrieval-Augmented Generation (RAG)
+
+***
+
+# Section 1: Generative vs. Discriminative Models
+
+## 1.1 Discriminative Models
+**Discriminative Models** are models used primarily for **classification** and **prediction**. Their goal is to understand the differences between data classes (e.g., distinguishing between a cat and a dog). They learn the boundary that separates the data points.
+- **Example:** Traditional supervised learning models like Support Vector Machines (SVM) and Logistic Regression.
+
+## 1.2 Generative Models (Generative AI)
+**Generative Models** are models used for **creating** new, original content that resembles the training data. Their goal is to understand the underlying distribution of the data so they can generate realistic samples.
+- **Examples:** Large Language Models (LLMs) like GPT and Llama, which generate human-like text, and models that create images or music.
+
+***
+
+# Section 2: LLM Challenges and Hallucination
+
+## 2.1 The Knowledge Cutoff Problem
+Generative Large Language Models (LLMs) are trained on massive datasets collected up to a specific date (the **knowledge cutoff**). Consequently, they cannot provide accurate or relevant information about recent events or specialized domain knowledge that emerged after their training finished.
+
+## 2.2 The Hallucination Problem
+**Hallucination** is a critical failure mode of LLMs where the model generates output that is factually incorrect, misleading, or entirely fabricated, yet presents it with high confidence and fluency.
+- **Cause:** This often occurs when the model attempts to fill a knowledge gap or creates a statistically plausible answer that is not grounded in real facts.
+
+***
+
+# Section 3: Retrieval-Augmented Generation (RAG)
+
+## 3.1 RAG Definition
+**Retrieval-Augmented Generation (RAG)** is an AI framework designed to overcome the knowledge cutoff and hallucination problems of LLMs. RAG combines a **Retrieval Component** (a search engine over custom data) with the **Generative Component** (the LLM).
+
+## 3.2 The RAG Process Flow
+1.  **Indexing:** Custom, authoritative documents are broken into chunks and converted into **vector embeddings** (numerical representations of meaning).
+2.  **Retrieval:** When a user asks a query, the system performs a **semantic search** on the vector embeddings to retrieve the top-K most relevant document chunks.
+3.  **Augmentation:** These retrieved chunks are added to the user's question, creating a large, context-rich **Prompt**.
+4.  **Generation:** The LLM receives the augmented prompt and is instructed to generate an answer **only** using the provided context.
+
+## 3.3 Benefits of RAG
+- **Factual Grounding:** Ensures the LLM's response is based on verifiable facts from your custom knowledge base.
+- **Currency:** Allows the LLM to access and use the latest information without expensive retraining.
+- **Explainability:** Enables the system to cite the source documents used to formulate the answer.
+
+***
+
+# Section 4: Prompt Engineering
+
+## 4.1 Definition
+**Prompt Engineering** is the discipline of structuring the text input (the prompt) to an LLM to reliably guide it toward a desired output style, content, and format.
+
+## 4.2 Prompt Components in RAG
+In a RAG system, the prompt engineering often includes several key components to control the LLM's behavior:
+- **System Role:** Defining the LLM's persona (e.g., "You are an expert AI Tutor.").
+- **Instruction:** Explicit commands (e.g., "Answer based ONLY on the context provided.").
+- **Context Injection:** The retrieved document chunks added into the prompt.
+- **Format Constraint:** Specifying the desired output structure (e'g., "The answer must be in a conversational tone and include a follow-up question.").
+
+---

@@ -1,0 +1,40 @@
+# TOPIC: 07 Deep Learning Architectures
+
+***
+
+# Section 1: Convolutional Neural Networks (CNNs)
+
+## 1.1 CNN Definition and Primary Use
+A **Convolutional Neural Network (CNN)** is a specialized deep learning architecture designed primarily for processing **image data** but also used in other grid-like data formats.
+- **Primary Goal:** To automatically and efficiently learn spatial hierarchies of features from the input image (e.g., lines, edges, shapes, and finally, objects).
+- **Advantage:** CNNs greatly reduce the number of parameters required compared to fully connected networks, making them faster to train on large images.
+
+## 1.2 The Convolutional Layer
+The **Convolutional Layer** is the core component of a CNN.
+- **Function:** It applies a small matrix, called a **filter** or **kernel**, that slides (convolves) over the input image. At each position, it performs a dot product between the filter and the underlying pixels.
+- **Output:** This process generates a **feature map** that highlights learned features such as edges or specific textures across the entire image.
+
+## 1.3 The Pooling Layer
+The **Pooling Layer** is typically inserted between successive convolutional layers.
+- **Function:** It progressively reduces the spatial size of the representation (downsampling), which lowers the computational load and makes the detected features more robust to slight changes in the image location (translation invariance).
+- **Common Technique:** **Max Pooling**, which takes the largest value from a cluster of neurons in the feature map.
+
+***
+
+# Section 2: Recurrent Neural Networks (RNNs)
+
+## 2.1 RNN Definition and Primary Use
+A **Recurrent Neural Network (RNN)** is a type of neural network designed specifically to handle **sequential data**, where the order of information matters. This includes text, speech, and time series data.
+- **Key Feature: Memory:** An RNN has a **hidden state** (or "memory") that captures information about previous steps in the sequence, allowing the model to understand context and dependencies over time.
+
+## 2.2 Sequence Data Handling
+In an RNN, the same weights and layers are applied sequentially to every item in the input.
+- **Process:** The input at time $t$ is processed, and the resulting hidden state is passed forward as an input to the next step (time $t+1$).
+- **Limitation:** Simple RNNs suffer from the **vanishing gradient problem** when trying to process very long sequences, making them unable to remember information from steps far in the past.
+
+## 2.3 Advanced RNN Architectures (LSTM/GRU)
+To overcome the vanishing gradient problem, advanced units were developed:
+- **LSTM (Long Short-Term Memory):** Uses internal components called **gates** (input, forget, output) to regulate the flow of information, allowing the network to selectively remember or forget data over long periods. LSTMs are effective for complex sequence tasks.
+- **GRU (Gated Recurrent Unit):** A slightly simplified version of the LSTM, offering similar performance with fewer parameters.
+
+---

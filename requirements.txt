@@ -1,0 +1,6 @@
+langchain-community
+chromadb
+sentence-transformers
+pypdf
+ask-sdk-core
+requests

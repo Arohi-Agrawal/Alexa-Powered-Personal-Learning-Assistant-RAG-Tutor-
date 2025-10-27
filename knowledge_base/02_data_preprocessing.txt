@@ -1,0 +1,62 @@
+# TOPIC: 02 Data and Preprocessing
+
+***
+
+# Section 1: Data Types in Machine Learning
+
+## 1.1 Structured Data
+**Structured Data** is highly organized and easily searchable data, typically residing in fixed fields within a record or file. It is quantitative.
+- **Format:** Usually stored in relational databases or spreadsheets (like SQL tables or CSV files).
+- **Characteristics:** Easily understood by machines, adheres to a data model (has rows and columns).
+
+## 1.2 Unstructured Data
+**Unstructured Data** has no predefined format or organization. It is qualitative and difficult for traditional programs to interpret directly.
+- **Format:** Examples include emails, social media posts, images, audio, and large text documents (like PDFs).
+- **Handling:** Requires advanced **Natural Language Processing (NLP)** or **Deep Learning** techniques to extract meaning.
+
+***
+
+# Section 2: Data Cleaning and Integrity
+
+## 2.1 Data Cleaning (The First Step)
+**Data Cleaning** is the process of detecting and correcting (or removing) corrupt or inaccurate records from a dataset. It is essential because models trained on dirty data produce unreliable results.
+
+## 2.2 Handling Missing Values
+Missing data can significantly impact model accuracy. Common techniques to address them include:
+- **Imputation:** Filling the missing value with a calculated substitute, such as the **mean** (average), **median** (middle value), or **mode** (most frequent value) of the available data.
+- **Deletion:** Removing the entire row or column containing the missing data. This is typically done only if the amount of missing data is small.
+
+## 2.3 Handling Outliers
+**Outliers** are data points that significantly deviate from other observations. They can skew statistical analysis and model performance.
+- **Identification:** Often identified using visual plots (box plots, scatter plots) or statistical methods (like the Z-score).
+- **Treatment:** Outliers are either removed or transformed (e.g., capped at a certain threshold) to limit their extreme influence.
+
+***
+
+# Section 3: Feature Engineering
+
+## 3.1 Definition of Feature Engineering
+**Feature Engineering** is the process of using domain knowledge to select, transform, or create new variables (called **features**) from raw data to make the prediction problem easier for the machine learning algorithm. It is arguably the most crucial step in the ML pipeline.
+
+## 3.2 Feature Selection vs. Feature Creation
+- **Feature Selection:** Choosing the most relevant subset of existing features to use in the model, reducing noise and computational cost.
+- **Feature Creation:** Generating new features by combining or transforming existing ones (e.g., calculating "Age" from "Date of Birth").
+
+## 3.3 One-Hot Encoding
+A technique used to convert **categorical features** (like 'City': 'New York', 'London') into a numerical format that ML algorithms can understand. It creates new binary (0 or 1) columns for each unique category.
+
+***
+
+# Section 4: Data Scaling and Transformation
+
+## 4.1 Normalization (Min-Max Scaling)
+**Normalization** scales the data into a fixed range, usually **0 to 1**. This is useful for algorithms that do not assume a normal distribution.
+- **Formula:** $X_{normalized} = (X - X_{min}) / (X_{max} - X_{min})$
+- **Use Case:** Neural Networks, which are sensitive to the magnitude of feature values.
+
+## 4.2 Standardization (Z-Score Normalization)
+**Standardization** scales the data such that the resulting distribution has a **mean of 0** and a **standard deviation of 1**.
+- **Formula:** $X_{standardized} = (X - \mu) / \sigma$ (where $\mu$ is the mean and $\sigma$ is the standard deviation).
+- **Use Case:** Algorithms that assume features follow a Gaussian (normal) distribution, such as Linear Regression and Logistic Regression.
+---
+

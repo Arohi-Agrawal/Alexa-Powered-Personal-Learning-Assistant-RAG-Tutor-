@@ -1,0 +1,65 @@
+# TOPIC: 05 Evaluation and Metrics
+
+***
+
+# Section 1: Introduction to Model Evaluation
+
+## 1.1 The Need for Metrics
+**Evaluation Metrics** are quantitative measures used to assess how well a machine learning model performs its task. They are essential for comparing different models and ensuring a model will generalize effectively on unseen data (the Test Set).
+
+## 1.2 The Confusion Matrix
+The **Confusion Matrix** is the foundational tool for evaluating **Classification** models. It is a table used to describe the performance of a model on a set of test data for which the true values are known. It breaks down predictions into four categories:
+- **True Positive (TP):** Correctly predicted positive.
+- **True Negative (TN):** Correctly predicted negative.
+- **False Positive (FP):** Incorrectly predicted positive (Type I Error).
+- **False Negative (FN):** Incorrectly predicted negative (Type II Error).
+
+***
+
+# Section 2: Core Classification Metrics
+
+These metrics are derived directly from the Confusion Matrix and measure different aspects of performance.
+
+## 2.1 Accuracy
+**Accuracy** is the simplest metric. It measures the ratio of all correct predictions (both positive and negative) to the total number of predictions.
+- **Formula:** $\text{Accuracy} = (\text{TP} + \text{TN}) / (\text{TP} + \text{TN} + \text{FP} + \text{FN})$
+- **Limitation:** Accuracy is misleading when the classes are imbalanced (e.g., 99% of the data is Negative).
+
+## 2.2 Precision
+**Precision** (also called Positive Predictive Value) measures the proportion of positive identifications that were actually correct. It answers: "Of all the times the model predicted positive, how many were right?"
+- **Formula:** $\text{Precision} = \text{TP} / (\text{TP} + \text{FP})$
+- **Usage:** Critical in scenarios where **False Positives are costly** (e.g., spam filters, where you want to avoid flagging a legitimate email as spam).
+
+## 2.3 Recall
+**Recall** (also called Sensitivity or True Positive Rate) measures the proportion of actual positives that were identified correctly. It answers: "Of all the actual positive cases, how many did the model find?"
+- **Formula:** $\text{Recall} = \text{TP} / (\text{TP} + \text{FN})$
+- **Usage:** Critical in scenarios where **False Negatives are costly** (e.g., medical diagnoses, where you want to ensure you find every patient with a disease).
+
+## 2.4 F1 Score
+The **F1 Score** is the harmonic mean of Precision and Recall. It provides a single score that balances both metrics, which is especially useful when dealing with imbalanced classes.
+- **Goal:** A high F1 Score indicates the model has both high Precision and high Recall.
+
+***
+
+# Section 3: Advanced Classification Tool
+
+## 3.1 ROC Curve and AUC
+- **ROC (Receiver Operating Characteristic) Curve:** A graph that plots the **True Positive Rate (Recall)** against the **False Positive Rate** (FP / (FP + TN)) at various threshold settings.
+- **AUC (Area Under the Curve):** The area measured beneath the ROC curve. An AUC value close to 1.0 indicates a model with excellent separability between classes (it performs well across all possible thresholds). An AUC of 0.5 suggests the model is no better than random guessing.
+
+***
+
+# Section 4: Regression Metrics
+
+Regression models predict continuous values, so classification metrics are not applicable.
+
+## 4.1 Mean Squared Error (MSE)
+**Mean Squared Error (MSE)** is the most common metric for regression. It measures the average squared difference between the predicted values and the actual values.
+- **Formula:** $\text{MSE} = \frac{1}{N} \sum_{i=1}^{N} (Y_i - \hat{Y}_i)^2$ (where $Y_i$ is the actual value and $\hat{Y}_i$ is the predicted value).
+- **Characteristic:** By squaring the error, MSE penalizes large errors more heavily, making it sensitive to outliers.
+
+## 4.2 Root Mean Squared Error (RMSE)
+**Root Mean Squared Error (RMSE)** is simply the square root of the MSE.
+- **Advantage:** RMSE is often preferred because it is expressed in the same units as the target variable, making it easier to interpret than MSE.
+
+---

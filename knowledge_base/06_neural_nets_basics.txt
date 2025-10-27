@@ -1,0 +1,69 @@
+# TOPIC: 06 Neural Networks Basics
+
+***
+
+# Section 1: The Core Building Block (The Perceptron)
+
+## 1.1 The Perceptron
+The **Perceptron** is the simplest and oldest model of an Artificial Neural Network. It was inspired by the biological neuron and serves as the basic computational unit.
+- **Function:** A Perceptron takes multiple binary or real-valued inputs, multiplies each input by a specific **weight**, sums the weighted inputs, and applies an **activation function** to determine the single binary output (usually 0 or 1).
+- **Goal:** To solve simple binary classification problems.
+
+## 1.2 Weights and Bias
+- **Weights:** Represent the strength or importance of each input feature. The Perceptron learns by adjusting these weights during training.
+- **Bias:** An extra input to the neuron that is always 1. It allows the activation function to be shifted left or right, enabling the model to fit a wider range of data patterns.
+
+***
+
+# Section 2: Neural Network Architecture (Layers)
+
+A full Neural Network (NN) is formed by combining multiple Perceptrons into layers.
+
+## 2.1 Input Layer
+- **Function:** The entry point for the data. The number of neurons in this layer is equal to the number of **features** in the input dataset (after preprocessing).
+- **Note:** The input layer does not perform any computations; it simply passes the data forward.
+
+## 2.2 Hidden Layers
+- **Function:** Where the primary computations and complex pattern recognition occur. Each neuron in a hidden layer processes the output from the previous layer.
+- **Deep Learning:** A network is considered "deep" if it contains **two or more hidden layers**. These layers extract progressively abstract features (e.g., lines and edges in the first layer, shapes and objects in later layers).
+
+## 2.3 Output Layer
+- **Function:** Provides the final result of the network's processing. The number of neurons here depends on the task:
+    - **Regression:** Typically one neuron (for a single continuous value).
+    - **Classification:** One neuron per class (e.g., three neurons for 'Cat', 'Dog', 'Bird').
+
+***
+
+# Section 3: Activation Functions
+
+An **Activation Function** introduces non-linearity into the model, allowing the network to learn more complex relationships than a simple linear model could.
+
+## 3.1 Sigmoid Function
+- **Output Range:** Squashes the output value between **0 and 1**.
+- **Usage:** Historically popular, especially for the output layer in binary classification tasks (as the output can be interpreted as a probability).
+- **Drawback:** Prone to the **vanishing gradient problem** in deep networks.
+
+## 3.2 Rectified Linear Unit (ReLU)
+- **Output:** Returns the input directly if positive, otherwise it returns zero.
+- **Formula:** $f(x) = \max(0, x)$
+- **Usage:** Currently the **most popular choice** for neurons in hidden layers due to its computational efficiency and effectiveness in training deep networks.
+
+***
+
+# Section 4: Training Process (Forward and Backpropagation)
+
+The process of training a neural network involves two main computational passes:
+
+## 4.1 Forward Propagation
+- **Definition:** The process where the input data moves **forward** through the network, from the Input Layer, through the Hidden Layers, to the Output Layer, calculating the output (prediction) for the given input.
+- **Process:** Input features $\rightarrow$ Weighted Sum $\rightarrow$ Activation Function $\rightarrow$ Next Layer.
+
+## 4.2 Backpropagation
+- **Definition:** The mechanism by which the network learns. It involves moving **backward** from the Output Layer.
+- **Process:**
+    1. Calculate the **Error** (difference between the predicted output and the true label).
+    2. Distribute (propagate) this error backward through the network's layers.
+    3. Use the error to calculate the **gradient** (how much the weights should change).
+    4. Adjust the **Weights** using an optimization algorithm (like Gradient Descent) to minimize the error in the next iteration.
+
+---

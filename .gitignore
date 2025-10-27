@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+
+# Venv
+.venv/
+
+# Local vector DB / cache
+chroma_db/
+
+# Secrets
+.env
+
+# Binaries / tools
+ngrok.exe
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

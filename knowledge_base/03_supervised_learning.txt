@@ -1,0 +1,56 @@
+# TOPIC: 03 Supervised Learning
+
+***
+
+# Section 1: Definition and Core Concepts
+
+## 1.1 Supervised Learning Definition
+**Supervised Learning** is a category of machine learning where the model learns from a **labeled dataset**. This means the training data contains **input features (X)** paired with the correct **output label (Y)**. The model’s main goal is to learn the function that maps the input (X) to the output (Y). The term "supervised" implies that the correct answer (the label) guides the learning process.
+
+## 1.2 The Role of Labeled Data
+The quality and consistency of the **labels** are critical. If the data is mislabeled, the model will learn incorrect relationships, leading to errors when making predictions on new data. Data labeling is often the most time-consuming and expensive part of building a supervised model.
+
+***
+
+# Section 2: Main Tasks of Supervised Learning
+
+The nature of the output variable (Y) determines whether the task is classification or regression.
+
+## 2.1 Classification
+**Classification** is a supervised task where the output variable is a **category** or a discrete value. The model learns to assign an input to one of several predefined classes.
+- **Binary Classification:** The output has two possible outcomes (e.g., predicting Spam/Not Spam, or a medical test result being Positive/Negative).
+- **Multi-Class Classification:** The output has more than two possible, mutually exclusive outcomes (e.g., classifying images of fruits as 'Apple', 'Banana', or 'Orange').
+
+## 2.2 Regression
+**Regression** is a supervised task where the output variable is a **real, continuous value**. The model predicts a number within a range, rather than a category.
+- **Examples:** Predicting the exact selling price of a house, forecasting the temperature tomorrow, or estimating a person's life expectancy.
+
+***
+
+# Section 3: Data Splitting for Training and Testing
+
+To rigorously test a model's ability to generalize to new data, the dataset is divided into three parts.
+
+## 3.1 Training Set
+- **Purpose:** Used directly to **train** the model. The model calculates and adjusts its internal parameters (weights) based on the input-output examples in this set.
+- **Typical Size:** Usually the largest portion, ranging from **60% to 80%** of the total data.
+
+## 3.2 Validation Set (or Dev Set)
+- **Purpose:** Used during development to **tune hyperparameters** (settings like learning rate or regularization strength) and compare different model architectures. This set prevents the model from relying too much on the specific patterns of the training data.
+
+## 3.3 Test Set
+- **Purpose:** Used only once, right at the **very end** of the project, to provide an unbiased, final measure of the model's performance in a production-like scenario. It must remain unseen during all development and tuning phases.
+
+***
+
+# Section 4: Bias-Variance Tradeoff
+
+The **Bias-Variance Tradeoff** is a central dilemma that affects the quality of all supervised models. It describes the conflict between a model's simplicity and its accuracy on different datasets.
+
+## 4.1 High Bias (Underfitting)
+- **Definition:** The error that results from a model being **too simple** or fundamentally flawed for the complexity of the data. High bias means the model cannot capture the essential relationships in the data.
+- **Result:** **Underfitting.** The model performs poorly on both the training data and new test data.
+
+## 4.2 High Variance (Overfitting)
+- **Definition:** The error that results from a model being **too complex**. The model learns the noise and random fluctuations of the training data exactly, mistaking noise for signal.
+- **Result:** **Overfitting.** The model performs exceptionally well on the training data but fails dramatically on new, unseen test data.

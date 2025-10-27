@@ -1,0 +1,45 @@
+# TOPIC: 08 Natural Language Processing (NLP) and Word Embeddings
+
+***
+
+# Section 1: NLP Foundations and Tokenization
+
+## 1.1 Natural Language Processing (NLP) Definition
+**Natural Language Processing (NLP)** is the field of AI that gives machines the ability to read, understand, interpret, and generate human languages. NLP is what allows computers to process text and speech data.
+
+## 1.2 Tokenization
+**Tokenization** is the fundamental first step in processing text for any AI model. It is the process of breaking down a sequence of text into smaller units called **tokens**.
+- **Tokens** can be words, characters, or subwords (parts of words).
+- **Importance:** Tokens are the atomic units of information that the model's vocabulary and embedding system operate on.
+
+## 1.3 Recurrent Models in NLP
+Historically, **Recurrent Neural Networks (RNNs)** were the standard for NLP tasks. They leverage their memory (hidden state) to process words sequentially, capturing context over time. However, due to their limitations with very long sentences (the vanishing gradient problem), they have largely been replaced by Transformer-based models for complex tasks.
+
+***
+
+# Section 2: Word Embeddings (The Numerical Language)
+
+## 2.1 Word Embeddings Definition
+**Word Embeddings** are dense, low-dimensional **numerical vector representations** of words. They capture the semantic and syntactic meaning of a word such that words with similar meanings are located close together in the vector space.
+- **Example:** The vector for "King" will be close to the vector for "Queen" but distant from the vector for "Apple."
+
+## 2.2 Word2Vec
+**Word2Vec** is one of the earliest and most influential models for generating word embeddings. It trains a shallow neural network to predict surrounding words based on a target word (or vice-versa).
+- **Core Principle:** The meaning of a word can be inferred by the context in which it appears.
+
+## 2.3 GloVe
+**GloVe (Global Vectors for Word Representation)** is an alternative embedding technique that combines the global statistical information of word co-occurrence (how often words appear together across the entire corpus) with local context. This often results in superior representation compared to purely local methods.
+
+***
+
+# Section 3: The Attention Mechanism
+
+## 3.1 Attention Mechanism (Brief Introduction)
+The **Attention Mechanism** is a revolutionary concept introduced to address the limitations of RNNs, especially their inability to effectively handle long-range dependencies in sequences.
+- **Core Function:** It allows the model to selectively **focus** on the most relevant parts of the input sequence when generating an output, regardless of how far apart those parts are in the original text.
+- **Weighted Sum:** It works by calculating a **weight** (or "attention score") for every input token, determining its importance relative to the current task.
+
+## 3.2 Contextualized Embeddings
+The invention of the Attention Mechanism led to the creation of **Contextualized Embeddings**. Unlike Word2Vec/GloVe (where "bank" has the same vector regardless of whether it refers to a river bank or a financial institution), contextualized embeddings change based on the surrounding words in the sentence, capturing the true meaning.
+
+---
