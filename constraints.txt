@@ -1,0 +1,21 @@
+# Core LangChain ecosystem (aligned on pydantic v2)
+langchain==0.2.14
+langchain-community==0.2.10
+langchain-huggingface==0.1.0
+langchain-chroma==0.1.2
+
+# Vector store
+chromadb==0.5.5
+
+# pydantic v2 is required by langchain 0.2.x
+pydantic>=2.6,<3
+
+# Modeling stack
+sentence-transformers==2.2.2
+transformers==4.41.1
+
+# Torch (CPU wheel for Windows; use CUDA variant if you have GPU/CUDA)
+torch==2.1.2
+
+# Some stacks still prefer numpy<2 (safe pin)
+numpy<2.0
